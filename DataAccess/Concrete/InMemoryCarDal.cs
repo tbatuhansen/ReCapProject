@@ -19,7 +19,8 @@ namespace DataAccess.Concrete
                 new Car{Id=2,BrandId=2,ColorId=1,ModelYear="2012",DailyPrice=200,Description="Volkswagen Jetta 1.6 TDI Trendline"},
                 new Car{Id=3,BrandId=3,ColorId=2,ModelYear="2008",DailyPrice=120,Description="Ford Focus 1.6 TDCI Trend"},
                 new Car{Id=4,BrandId=1,ColorId=3,ModelYear="2004",DailyPrice=120,Description="Renault Laguna II 1.6 Privilege"},
-                new Car{Id=5,BrandId=4,ColorId=3,ModelYear="2009",DailyPrice=250,Description="Volvo S40 1.6D Dynamic"}
+                new Car{Id=5,BrandId=4,ColorId=3,ModelYear="2013",DailyPrice=190,Description="Chery Tiggo 1.6 Lusso"},
+                new Car{Id=6,BrandId=5,ColorId=4,ModelYear="1995",DailyPrice=80,Description="Toyota Corolla 1.6 XE.i"}
             };
         }
 
