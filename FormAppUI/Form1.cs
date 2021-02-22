@@ -31,6 +31,7 @@ namespace FormAppUI
             CarManager carManager = new CarManager(new EfCarDal());
             var list = carManager.GetAll();
             dataGridView1.DataSource = list;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
