@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Core.DataAccess.EntitiyFramework
+namespace Core.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : class, IEntity, new()
@@ -16,9 +16,11 @@ namespace Core.DataAccess.EntitiyFramework
         {
             using (TContext context = new TContext())
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
+                var added = context.Entry(entity);
+                added.State = EntityState.Added;
                 context.SaveChanges();
+
+
             }
         }
 
@@ -26,9 +28,11 @@ namespace Core.DataAccess.EntitiyFramework
         {
             using (TContext context = new TContext())
             {
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
+                var deleted = context.Entry(entity);
+                deleted.State = EntityState.Deleted;
                 context.SaveChanges();
+
+
             }
         }
 
@@ -44,7 +48,8 @@ namespace Core.DataAccess.EntitiyFramework
         {
             using (TContext context = new TContext())
             {
-                return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
+                return filter == null ? context.Set<TEntity>().ToList()
+                    : context.Set<TEntity>().Where(filter).ToList();
             }
         }
 
@@ -52,10 +57,14 @@ namespace Core.DataAccess.EntitiyFramework
         {
             using (TContext context = new TContext())
             {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
+                var updated = context.Entry(entity);
+                updated.State = EntityState.Modified;
                 context.SaveChanges();
+
+
             }
         }
+
+
     }
 }
